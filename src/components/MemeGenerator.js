@@ -25,14 +25,11 @@ const MemeGenerator = () => {
   };
 
   useEffect(() => {
+    console.log("test run");
     fetch("https://api.imgflip.com/get_memes")
       .then(response => response.json())
       .then(response => setAllMemeImgs(response.data.memes));
-    console.log("fetching data");
-    return () => {
-      console.log("cleaning up...");
-    };
-  }, [randomImage]);
+  }, []);
 
   return (
     <div className="meme-container">
